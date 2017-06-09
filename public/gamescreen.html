@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app="app" >
+  <head>
+    <meta charset="utf-8">
+
+
+    <title>MEAN FOOTBALL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+
+
+
+
+
+    <script src="src/startpage/chance.js"></script>
+    <script src="src/startpage/startpageController.js"></script>
+
+
+    <script  src= "phaser2.js"></script>
+
+    <script src="src/state/bootState.js"></script>
+
+    <script src="src/state/GameActionState.js"></script>
+    <script src="src/state/OffenseInitState.js"></script>
+    <script src="src/state/HuddleState.js"></script>
+
+
+    <script src="src/assets/scripts/gamefunctions.js"></script>
+    <script src="src/assets/scripts/applicationLogic.js"></script>
+    <script src="src/assets/scripts/rushingLogScripts.js"></script>
+
+
+
+
+    <script src="src/playbook/offense/passPlays.js"></script>
+    <script src="src/playbook/offense/runPlays.js"></script>
+    <script src="src/playbook/defense/defensiveplays.js"></script>
+
+
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+
+<body ng-controller="startCtrl">
+
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6" >
+              <div id="gamecanvas"> </div>
+              <div class="scoreBoard">
+                    <p class= "homeScore">Home:</p> <p id="home"> </p>
+                    <p class="gametime"> Time:</p>
+                    <p class="gamequarter"> QTR: 1</p>
+                    <p id="counter">15:00</p>
+                    <p class="awayScore"> Away: </p> <p id="away">  </p>
+                    <p id="currentDownDisplay"> </p>
+                    <p id="yardsRemaining"> </p>
+
+                   <!-- <p id= "yardsRemaining">11 </p> -->
+              </div>
+
+            <div class= "gameLogWrapper">
+                  <h3> Game Log</h3>
+              <div id="gameLog">
+              </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-3">
+          <div class="gameController">
+              <div class="btn-group uimenu " role="group">
+                  <a class="btn btn-info" ui-sref="playbook">playbook</a>
+                  <a class="btn btn-info" ui-sref="coach">coach </a>
+                  <a class="btn btn-info" ui-sref="depthchart">depth chart</a>
+                  <a class="btn btn-info" ui-sref="gamestat">game stats</a>
+                  <ui-view> </ui-view>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+
+            var oldBallSpot
+            var game = new Phaser.Game(800, 400, Phaser.AUTO, 'gamecanvas');
+                game.state.add('GameActionState', GameActionState);
+
+                game.state.add('bootState', bootState);
+                game.state.start('GameActionState');
+                yo2();
+
+</script>

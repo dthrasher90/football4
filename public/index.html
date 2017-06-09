@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+<head>
+
+
+<title>Head Coach</title>
+
+ <meta charset="utf-8">
+    <title>MEAN FOOTBALL</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+
+     <script src="src/startpage/chance.js"></script>
+     <script src="src/startpage/startpageController.js"></script>
+
+     <script src="phaser2.js">  </script>
+
+
+     <link rel="stylesheet" href="newteam.css">
+</head>
+
+
+<body ng-controller="startCtrl">
+    <br>
+    <h1> Head Coach  </h1>
+        <a  type="button" class="btn btn-primary btn-sm" href="#!playerselect">New</a>
+        <button type="button" class="btn btn-primary btn-sm" ng-click="load()">Load</button>
+
+
+
+    <ng-view> </ng-view>
+
+</body>
+
+</html>

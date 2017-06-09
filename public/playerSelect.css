@@ -1,0 +1,120 @@
+body{
+  font-family: "Press Start 2P", cursive;
+  background: black;
+  color: ghostwhite;
+}
+h1{
+  text-align: center;
+  color: ghostwhite;
+}
+
+.submit{
+  float: right;
+}
+
+table{
+  width: 100%;
+}
+
+thead{
+/
+  width: 100%;
+  padding: 3px;
+}
+th{
+  text-align: center;
+  color:black;
+
+}
+
+tr{
+  padding: 1px;
+}
+
+
+td{
+  text-align: center;
+
+}
+
+#playerContainer{
+  height:400px;
+  width: 100%;
+  overflow: scroll;
+}
+
+#myTeam{
+  height:600px;
+  width: 50%;
+  overflow: scroll;
+}
+
+
+h3{
+  text-align: center;
+}
+
+
+.sectionContainment{
+  height: 400px;
+  width: 100%;
+  clear:both;
+
+}
+.playersRemaining{
+  height:75px;
+  width: 100%;
+  padding: 3px;
+  text-align: center;
+
+  position: relative;
+
+
+}
+
+.startGame{
+  float: right;
+  margin-bottom: 20px;
+
+
+}
+
+.playersRemaining p{
+  display: inline;
+  padding-top: 3px;
+  text-align: center;
+
+}
+
+.playersRemaining p{
+  text-align: center;
+  padding-top: 1px;
+
+}
+
+.myTeam{
+  height: 200px;
+  width: 100%;
+}
+
+
+}
+.table{
+  font-family: "Press Start 2p", cursive;
+  font-size: 10px;
+  border-color: black;
+  table-layout: auto;
+  width: 50%;
+  overflow-x: scroll;
+}
+
+thead{
+  background-color: dimgrey;
+}
+tbody{
+  overflow: scroll;
+}
+tr:hover{
+  background-color: grey;
+  color: lawngreen;
+}

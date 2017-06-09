@@ -1,0 +1,22 @@
+{
+  "name": "meanfootball",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular-route": "^1.6.4",
+    "angular-ui-router": "^1.0.0-rc.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.10.4"
+  },
+  "devDependencies": {
+    "body-parser": "^1.17.2",
+    "nodemon": "^1.11.0"
+  }
+}

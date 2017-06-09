@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+
+
+<title>Head Coach</title>
+
+ <meta charset="utf-8">
+    <title>MEAN FOOTBALL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+
+     <script src="chance.js"></script>
+     <script src="src/startpage/startpageController.js"></script>
+    <link rel="stylesheet" href="playerSelect.css">
+</head>
+<body ng-controller="startCtrl">
+
+
+<div class="container-fluid">
+    <div class="row">
+      <div class=".col-md-6">
+        <div id="playerContainer">
+            <table class= "table">
+              <thead>
+                <th>First</th>
+                <th>Last</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>Pos</th>
+                <th>College</th>
+                <th>Str</th>
+                <th>Con</th>
+                <th>Dex</th>
+                <th>Int</th>
+                <th>Wis</th>
+                <th>Cha</th>
+                <th></th>
+              </thead>
+              <tbody>
+                <tr ng-repeat="player in players ">
+                    <td>{{player.first}}</td>
+                    <td>{{player.last}}</td>
+                    <td>{{player.height}}</td>
+                    <td>{{player.weight}}</td>
+                    <td>{{player.position}}</td>
+                    <td>{{player.college}}</td>
+                    <td>{{player.Str}}</td>
+                    <td>{{player.Con}}</td>
+                    <td>{{player.Dex}}</td>
+                    <td>{{player.Int}}</td>
+                    <td>{{player.Wis}}</td>
+                    <td>{{player.Cha}}</td>
+
+
+
+                    <td><button type="button" class="btn btn-default" ng-click='button1()'>Add Player</button></td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+
+
+      <div class=".col-md-6">
+        <div class="clearfix sectionContainment">
+              <h3>My Team</h3>
+
+
+          <div class="myTeam">
+            <div class ="playersRemaining">
+
+                <p class="QBslots">QB: {{QBCount}}/1</P>
+                <p class="RBslots"> RB: {{RBCount}}/2</p>
+                <p class="WRslots"> WR: {{WRCount}}/2 </P>
+                <p class='DEslots'> DE: {{DECount}}/2</p>
+                <p class='MLBSlots'> MLB: {{MLBCount}}/1</p>
+
+                 <button type="button" class="btn btn-default" ng-click='save()'>Save</button>
+
+                 <a class="btn btn-success startGame" href="#!teamhome">Start</a>
+
+            </div>
+
+
+           <table class="table">
+                        <thead>
+                            <th>First</th>
+                            <th>Last</th>
+                            <th>Height</th>
+                            <th>Weight</th>
+                            <th>Pos </th>
+                            <th>College</th>
+                            <th>Str</th>
+                            <th>Con</th>
+                            <th>Dex</th>
+                            <th>Int</th>
+                            <th>Wis</th>
+                            <th>Cha</th>
+                            <th></th>
+                        </thead>
+
+                        <tr ng-repeat="player in newteam">
+
+
+                            <td>{{player.first}}</td>
+                            <td>{{player.last}}</td>
+                            <td>{{player.height}}</td>
+                            <td>{{player.weight}}</td>
+                            <td>{{player.position}}</td>
+                            <td>{{player.college}}</td>
+                            <td>{{player.Str}}</td>
+                            <td>{{player.Con}}</td>
+                            <td>{{player.Dex}}</td>
+                            <td>{{player.Int}}</td>
+                            <td>{{player.Wis}}</td>
+                            <td>{{player.Cha}}</td>
+                            <td><button type="button" class="btn btn-default" >Remove</button></td>
+
+
+                        </tr>
+
+                </table>
+           </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>

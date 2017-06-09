@@ -1,0 +1,30 @@
+Create a service
+
+playerService
+
+var player = [];
+
+setPlayer(id)
+ {
+ player.push(id)
+ }
+
+GetPlayers() {
+return player
+}
+
+
+
+
+
+homeCtrl -- page1 (playerServic)
+playerServic.setPlayer(id)
+
+
+
+playerList -- page2 ()
+
+playerServic.GetPlayers()
+
+
+$scope.selectedlayers = playerServic.GetPlayers()

@@ -1,0 +1,191 @@
+body{
+  font-family: "Press Start 2P", cursive;
+  background: black;
+  color: steelblue;
+  overflow: hidden;
+}
+
+a {
+  font-size: 18px;
+}
+
+#gamecanvas{
+  width: 850px;
+  height: 450px;
+  /*margin-top: 50px;*/
+}
+.scoreBoard{
+  height: 75px;
+  width: 800px;
+  background-color: grey;
+  color: white;
+  font-size: 24px;
+  position: relative;
+}
+
+.homeScore{
+  position: absolute;
+  height: 30px;
+  width: 110px;
+
+}
+
+#home{
+  position: absolute;
+  height : 30px;
+  width: 70px;
+  border: 3px blue;
+  margin-left: 120px;
+  border: 3px solid orangered;
+}
+.awayScore{
+  position:absolute;
+  margin-top: 40px;
+  height: 30px;
+  width: 110px;
+  border: 3px solid gold;
+
+}
+
+#away{
+  position: absolute;
+  height: 30px;
+  width: 70px;
+  margin-left: 120px;
+  margin-top: 40px;
+  border: 5px solid purple;
+}
+.gametime {
+  position: absolute;
+  height: 30px;
+  width:110px;
+  border: 5px darkslategrey;
+  margin-left: 300px;
+}
+
+#counter{
+  position: absolute;
+  height: 30px;
+  width:110px;
+  margin-left: 300px;
+  margin-top: 40px;
+  border: 5px solid crimson;
+}
+
+.gamequarter{
+  position: absolute;
+  margin-left: 600px;
+}
+
+#gameLog{
+  height: 300px;
+  width: 800px;
+  margin-top:25px;
+  border: 3px solid blue;
+  overflow: auto;
+
+}
+
+#downChecker{
+  position: absolute;
+  font-size: 24px;
+  margin-left: 600px;
+  height: 40px;
+  width: 165px;
+  border: 5px  solid lightseagreen;
+}
+
+#currentDownDisplay{
+
+  position: absolute;
+  font-size: 24px;
+  margin-left: 600px;
+  margin-top: 40px;
+  height: 40px;
+  width: 100px;
+  border: 5px  solid lightseagreen;
+
+}
+
+#yardsRemaining{
+  position: absolute;
+  font-size: 24px;
+  margin-left: 700px;
+  margin-top: 40px;
+  height: 40px;
+  width: 50px;
+  border: 5px solid green;
+
+
+}
+
+.gameController{
+
+  margin-left: 100px;
+  margin-top: 50px;
+  height: 800px;
+  width: 500px;
+  font-size: 8px;
+  border: 3px gold;
+}
+
+.uimenu{
+  /*text-align: center;*/
+  height: 600px;
+  width: 600px;
+}
+
+.coachTable{
+  font-size: 14px;
+}
+
+
+.gameStats{
+
+  font-size: 14px;
+  padding: 3px;
+
+}
+
+.gamestatsTable{
+
+  margin-top: 25px;
+  padding: 3px;
+  width: 350px;
+}
+
+.depthChartTable{
+  width: 600px;
+  font-size: 14px;
+
+}
+
+.depthChartTable th{
+  padding-bottom: 5px;
+}
+
+
+
+
+li {
+  font-size: 14px;
+  list-style-type: none;
+}
+
+
+
+.canvas{
+  clear: right;
+  overflow:  hidden;
+  display: inline-block;
+  position: relative;
+}
+
+h1{
+  text-align: center;
+}
+
+
+.title {
+  text-align: center;
+}
