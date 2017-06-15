@@ -72,15 +72,15 @@ function runPlayMiddle(){
        lg2.body.checkCollision.right = true;
 
        console.log('lg2 =========== ', lg2);
-
-       var LGx = ct.x;
-       var LGy = ct.y - 60;
-       var lg5 = this.game.add.sprite(LGx, LGy, 'lg');
-       lg5.scale.setTo(0.03);
-       var spriteTextLG = game.add.text(LGx, LGy, 'LG', {
-           font: '9px Press Start 2P'
-       });
-       this.game.physics.arcade.enable(lg5, Phaser.Physics.ARCADE);
+       //
+      //  var LGx = ct.x;
+      //  var LGy = ct.y - 60;
+      //  var lg5 = this.game.add.sprite(LGx, LGy, 'lg');
+      //  lg5.scale.setTo(0.03);
+      //  var spriteTextLG = game.add.text(LGx, LGy, 'LG', {
+      //      font: '9px Press Start 2P'
+      //  });
+      //  this.game.physics.arcade.enable(lg5, Phaser.Physics.ARCADE);
       //  lg5.body.velocity.y = + 300;
       //  console.log('lg5 =========== ', lg2);
 
@@ -98,14 +98,14 @@ function runPlayMiddle(){
 
 
 
-       var DT1x = ct.x + 40;
-       var DT1y = ct.y  -20;
-       var x53= this.game.add.sprite(DT1x, DT1y, 'dt1');
-               x53.scale.setTo(0.061);
-       var spriteTextDT1 = game.add.text(DT1x, DT1y, 'DT1', {font: '9px Press Start 2P'});
-       x53.game.physics.arcade.enable(x53, Phaser.Physics.ARCADE);
-       console.log('x53', x53);
-       x53.body.velocity.x = -50;
+      //  var DT1x = ct.x + 40;
+      //  var DT1y = ct.y  -20;
+      //  var x53= this.game.add.sprite(DT1x, DT1y, 'dt1');
+      //          x53.scale.setTo(0.061);
+      //  var spriteTextDT1 = game.add.text(DT1x, DT1y, 'DT1', {font: '9px Press Start 2P'});
+      //  x53.game.physics.arcade.enable(x53, Phaser.Physics.ARCADE);
+      //  console.log('x53', x53);
+      //  x53.body.velocity.x = -50;
 
 
 

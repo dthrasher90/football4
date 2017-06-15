@@ -78,13 +78,21 @@ app.config(function($stateProvider) {
 app.controller('startCtrl', ['$scope', '$localStorage', function($scope, $localStorage){
 
 
+
+
+    $scope.qb =[];
+    $scope.rb1=[];
+    $scope.rb2=[];
+    $scope.wr1=[];
+    $scope.wr2=[];
+    $scope.wr3=[];
+
+    $scope.gameRoster =[];
     $scope.myTeam1= [];
     $scope.myTeam=[];
     $scope.players=[];
     $scope.newteam=[];
     $scope.start = function(){}
-
-
 
 
 
@@ -98,7 +106,7 @@ function characterGen(){
           return {
               first: chance.first({gender: "male"}),
               last: chance.last(),
-              position:  chance.pickone(['QB', 'RB', 'WR', 'MLB', 'DE']),
+              position:  chance.pickone(['QB', 'RB1', 'RB2', 'WR1' ,'WR2', 'MLB', 'DE']),
               college: chance.pickone(['Alabama','Arkansas', 'Florida', 'Kentucky', 'LSU', 'Mississippi St', 'Ole Miss', 'Texas A&M', 'Mississippi', 'S. Carolina',
                'Tennessee', 'Georgia', 'Missouri', 'Vanderbilt', 'Boston College', 'Clemson', 'Florida St', 'Louisville', 'Notre Dame', 'Syracuse', 'Wake Forest',
                'Duke', 'Miami', 'Pittsburg', 'Virginia', 'Maryland',
@@ -227,29 +235,75 @@ $scope.button1 = function(myTeam){
 $scope.save = function(team1) {
 
 
-  var myteam = $scope.newteam;
-
-  var team1 = JSON.stringify(myteam);
-
-  $localStorage.myteam = team1;
-  console.log("team 1", team1);
-
-
+        myteam = $scope.newteam;
+        team1= JSON.stringify(myteam);
+        console.log("myteam", myteam, team1);
+        alert("Team saved");
+        $localStorage.myteam = team1;
 
 }
 
 
-$scope.load= function(){
 
-//
-//   var team2 =
-//   console.log(team2);
-//
-// = team2;
+
+$scope.load = function(){
+
+
+  $scope.yo = JSON.parse($localStorage.myteam || null);
+      console.log($scope.yo);
+  angular.extend($scope.gameRoster, $scope.yo);
+  console.log("game roseter --- ", $scope.gameRoster);
+
 
 }
 
-$scope.yo = JSON.parse($localStorage.myteam);
-    console.log($scope.yo)
+$scope.yo = JSON.parse($localStorage.myteam || null);
+    console.log($scope.yo);
 
+
+
+
+
+// $scope.myFunc = function(setPosition) {
+//
+//     console.log("item --- ", setPosition.item.position)
+//
+//     if(setPosition.item.position == "QB"){
+//
+//       $scope.qb = $scope.qb.concat(setPosition);
+//       $scope.gameRoster.push($scope.qb);
+//       console.log("set qb", $scope.qb);
+//
+//     } else if(setPosition.item.position == "RB"){
+//
+//       $scope.rb1 = $scope.rb1.concat(setPosition);
+//       console.log("set rb",  $scope.rb1);
+//
+//     } else if(setPosition.item.position == "WR"){
+//
+//       $scope.wr1 = $scope.wr1.concat(setPosition);
+//       console.log("set wr1",  $scope.wr1);
+//
+//     }
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//end controller brackets
 }]);
