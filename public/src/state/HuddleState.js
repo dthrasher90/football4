@@ -37,7 +37,7 @@ var HuddleState  = {
           var field = this.game.add.button(15, 50, 'field');
               field.scale.setTo(1.1);
               field.anchor.setTo(0);
-// =========================SCOREBOARD CREATED====================================================================
+
 
 function switchStateToGameAction(){
     game.state.add('GameActionState', GameActionState);

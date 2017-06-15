@@ -30,11 +30,13 @@ function passPlayLeft() {
 
         var ct = game.add.sprite(220, 220, 'ct');
         ct.scale.setTo(0.03);
+        this.game.physics.arcade.enable(ct, Phaser.Physics.ARCADE);
 
       } else{
 
         var ct = game.add.sprite(newBallSpotx, 220, 'ct');
         ct.scale.setTo(0.03);
+        this.game.physics.arcade.enable(ct, Phaser.Physics.ARCADE);
       }
 
 
@@ -62,6 +64,7 @@ function passPlayLeft() {
       var spriteTextRG = game.add.text(RGx, RGy, 'RG', {
           font: '9px Press Start 2P'
       });
+        this.game.physics.arcade.enable(rg, Phaser.Physics.ARCADE);
 
       var RTx = ct.x;
       var RTy = rg.y + 20;
@@ -113,14 +116,7 @@ function passPlayLeft() {
       var spriteTextWR3 = game.add.text(WR3x, WR3y, 'WR3', {
           font: '9px Press Start 2P'
       });
-      //
-      // var DT1x= ct.x - 100;
-      // var DT1y = ct.y + 100;
-      // var dt1 = this.game.add.sprite(DT1x, DT1y, 'dt1');
-      // dt1.scale.setTo(0.05);
-      // var spriteTextDT1 = game.add.text(DT1x, DT1y, 'dt1', {
-      //     font: '9px Press Start 2P'
-      // });
+
 
 
 
@@ -167,12 +163,12 @@ function passPlayLeft() {
       tweenD.start();
       tweenE.start();
       tweenF.start();
-      tweenG.start();
+      // tweenG.start();
       tweenH.start();
 
 
-      // Base43Defense();
-      // game.physics.arcade.moveToXY(dt1, 100, 100);
+      Base43Defense(ct, qb);
+
 
       qbPass();
       function qbPass(playCount) {
@@ -182,7 +178,7 @@ function passPlayLeft() {
           console.log("old spot ", oldBallSpot);
           console.log('wr1 = ',  wr1);
 
-          var x =1;
+          var x = 1;
           // Math.floor((Math.random() * 3) + 1);
           console.log(x);
           switch (x) {
@@ -221,7 +217,7 @@ function passPlayLeft() {
                       console.log("crossed mid field");
                       homeTD();
                     }
-                     setTimeout(switchStateToHuddle,1500);
+                    //  setTimeout(switchStateToHuddle,1500);
                     return newBallSpotx, newBallSpoty, playCount
 
 
@@ -330,10 +326,12 @@ function passPlayRight() {
                   var ct = game.add.sprite(220, 220, 'ct');
                   ct.scale.setTo(0.03);
 
+
               } else{
 
                   var ct = game.add.sprite(newBallSpotx, 220, 'ct');
                   ct.scale.setTo(0.03);
+
               }
 
               passingPlaysDownChecker();

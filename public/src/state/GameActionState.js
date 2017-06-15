@@ -48,7 +48,6 @@ var GameActionState  = {
 
 
 
-
           var field = game.add.sprite(15, 50, 'field');
               field.scale.setTo(1.1);
               field.anchor.setTo(0);
@@ -67,7 +66,9 @@ var GameActionState  = {
 //============================GameButtons===========================================================
 
 
-    update: function(ct, newBallSpotx){
+    update: function(){
+
+
 
 
 

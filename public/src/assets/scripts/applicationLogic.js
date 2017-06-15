@@ -118,3 +118,33 @@ function passingPlaysDownChecker(){
 
 
 }
+
+
+function coachPlayer(){
+  alert("coach button pressed");
+}
+
+
+function cactchBall(){
+
+  //catch  = dex + wis - pass accuaracy
+
+}
+
+function recieverRunRout(){
+
+  //run = dex + wis
+
+}
+
+function passBall(){
+
+
+
+  //pass = str + int -reciever open
+}
+
+function tacklePlayer(){
+
+  //tackle = strengh + wis
+}
