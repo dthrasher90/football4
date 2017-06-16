@@ -106,7 +106,7 @@ function characterGen(){
           return {
               first: chance.first({gender: "male"}),
               last: chance.last(),
-              position:  chance.pickone(['QB', 'RB1', 'RB2', 'WR1' ,'WR2', 'MLB', 'DE']),
+              position:  chance.pickone(['QB', 'RB', 'WR', 'MLB', 'DE']),
               college: chance.pickone(['Alabama','Arkansas', 'Florida', 'Kentucky', 'LSU', 'Mississippi St', 'Ole Miss', 'Texas A&M', 'Mississippi', 'S. Carolina',
                'Tennessee', 'Georgia', 'Missouri', 'Vanderbilt', 'Boston College', 'Clemson', 'Florida St', 'Louisville', 'Notre Dame', 'Syracuse', 'Wake Forest',
                'Duke', 'Miami', 'Pittsburg', 'Virginia', 'Maryland',
@@ -162,15 +162,17 @@ $scope.WRCount=0;
 $scope.MLBCount=0;
 $scope.DECount=0;
 
-
-$scope.button1 = function(myTeam){
+$scope.orderByPosition = function(x) {
+       $scope.myOrderBy = x;
+   }
+$scope.button1 = function(myTeam, index, player){
 
 
     if(this.player.position == 'QB'){
         $scope.QBCount = $scope.QBCount +1;
 
           if ($scope.QBCount > 1){
-            // alert("drop a qn");
+            alert("Drop a QB");
           }
 
 
@@ -178,24 +180,24 @@ $scope.button1 = function(myTeam){
 
        $scope.WRCount = $scope.WRCount + 1;
 
-         if ($scope.WRCount > 2){
-          //  alert("drop a WR");
+         if ($scope.WRCount > 1){
+           alert("Drop a WR");
          }
 
     } else if(this.player.position == 'RB'){
 
        $scope.RBCount = $scope.RBCount + 1;
 
-         if ($scope.RBCount > 2){
-          //  alert("drop a RB");
+         if ($scope.RBCount > 1){
+           alert("Drop a RB");
          }
 
     } else if(this.player.position == 'DE'){
 
        $scope.DECount =$scope.DECount + 1;
 
-         if ($scope.DECount > 2){
-          //  alert("drop a DE");
+         if ($scope.DECount > 1){
+           alert("Drop a DE");
          }
 
     } else if(this.player.position == 'MLB'){
@@ -203,7 +205,7 @@ $scope.button1 = function(myTeam){
       $scope.MLBCount = $scope.MLBCount + 1;
 
         if ($scope.MLBCount > 1){
-          // alert("drop a MLB");
+          alert("Drop a MLB");
         }
     }
 
@@ -227,13 +229,62 @@ $scope.button1 = function(myTeam){
         id: this.player.id
     });
 
-
+    this.player.splice(index, 1);
     console.log($scope.newteam);
+    console.log("splice---", this.player);
 
   };
 
+$scope.remove = function(player){
+
+  console.log("remove---", player);
+
+
+}
+
 $scope.save = function(team1) {
 
+
+  if(this.player.position == 'QB'){
+      $scope.QBCount = $scope.QBCount +1;
+
+        if ($scope.QBCount > 1){
+          alert("Drop a QB first");
+        }
+
+
+  } else if(this.player.position == 'WR'){
+
+     $scope.WRCount = $scope.WRCount + 1;
+
+       if ($scope.WRCount > 1){
+         alert("Drop a WR");
+       }
+
+  } else if(this.player.position == 'RB'){
+
+     $scope.RBCount = $scope.RBCount + 1;
+
+       if ($scope.RBCount > 1){
+         alert("Drop a RB");
+       }
+
+  } else if(this.player.position == 'DE'){
+
+     $scope.DECount =$scope.DECount + 1;
+
+       if ($scope.DECount > 2){
+         alert("Drop a DE");
+       }
+
+  } else if(this.player.position == 'MLB'){
+
+    $scope.MLBCount = $scope.MLBCount + 1;
+
+      if ($scope.MLBCount > 1){
+        alert("Drop a MLB");
+      }
+  }
 
         myteam = $scope.newteam;
         team1= JSON.stringify(myteam);

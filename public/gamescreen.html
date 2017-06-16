@@ -34,6 +34,8 @@
     <script src="src/assets/scripts/gamefunctions.js"></script>
     <script src="src/assets/scripts/applicationLogic.js"></script>
     <script src="src/assets/scripts/rushingLogScripts.js"></script>
+    <script src="src/assets/scripts/passLog.js"></script>
+
 
 
 
@@ -93,13 +95,14 @@
 
 <script type="text/javascript">
 
-
             var oldBallSpot
             var game = new Phaser.Game(800, 400, Phaser.AUTO, 'gamecanvas');
                 game.state.add('GameActionState', GameActionState);
 
                 game.state.add('bootState', bootState);
-                game.state.start('GameActionState');
-                yo2();
+                game.state.start('bootState');
+
+
+
 
 </script>
