@@ -21,6 +21,15 @@
      <script src="draganddrop.min.js"></script>
      <script src="src/startpage/startpageController.js"></script>
 
+     <script src="src/playbook/offense/passPlays.js"></script>
+     <script src="src/playbook/offense/runPlays.js"></script>
+     <script src="src/playbook/defense/defensiveplays.js"></script>
+     <script src="src/assets/scripts/gamefunctions.js"></script>
+     <script src="src/assets/scripts/applicationLogic.js"></script>
+     <script src="src/assets/scripts/rushingLogScripts.js"></script>
+     <script src="src/assets/scripts/passLog.js"></script>
+
+
 
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
      <link rel="stylesheet" href="teamHome.css">
@@ -40,9 +49,10 @@
 <body ng-controller="startCtrl">
   <div class="title.container">
     <h2>Team Home </h2>
-    <button type="button" class="btn btn-primary" ng-click="submitLineup()">Submit Lineup
+
+    <button type="button" class="btn btn-primary"  ng-click="submitLineup()">Submit Lineup
     </button>
-    <a class="btn btn-success startGame" href="/gamescreen.html">Start Game!!!</a>
+    <a class="btn btn-success startGame" href="/gamescreen.html"  >Start Game!!!</a>
    </div>
     </div>
 
@@ -56,7 +66,6 @@
         <th>Height</th>
         <th>Weight</th>
         <th>Pos</th>
-        <th>Set Position</th>
         <th>College</th>
         <th>Str</th>
         <th>Con</th>
@@ -74,18 +83,6 @@
             <td>{{player.height}}</td>
             <td>{{player.weight}}</td>
             <td>{{player.position}}</td>
-            <!-- <td>
-
-        <select name= "setPosition" ng-options="item.position for item in yo"
-        ng-model="setPosition.item" ng-change="myFunc(setPosition)">
-
-
-              </select>
-
-
-          <tt> PLAYER = {{item.position}} </tt>
-
-            </td> -->
             <td>{{player.college}}</td>
             <td>{{player.Str}}</td>
             <td>{{player.Con}}</td>

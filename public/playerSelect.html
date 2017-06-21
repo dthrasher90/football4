@@ -18,6 +18,15 @@
 
      <script src="chance.js"></script>
      <script src="src/startpage/startpageController.js"></script>
+
+     <script src="src/playbook/offense/passPlays.js"></script>
+     <script src="src/playbook/offense/runPlays.js"></script>
+     <script src="src/playbook/defense/defensiveplays.js"></script>
+     <script src="src/assets/scripts/gamefunctions.js"></script>
+     <script src="src/assets/scripts/applicationLogic.js"></script>
+     <script src="src/assets/scripts/rushingLogScripts.js"></script>
+     <script src="src/assets/scripts/passLog.js"></script>
+
     <link rel="stylesheet" href="playerSelect.css">
 </head>
 <body ng-controller="startCtrl">
@@ -27,13 +36,14 @@
     <div class="row">
       <div class=".col-md-6">
         <div id="playerContainer">
+
             <table class= "table">
               <thead>
                 <th>First</th>
                 <th>Last</th>
                 <th>Height</th>
                 <th>Weight</th>
-                <th>Pos</th>
+                <th> Pos </th>
                 <th>College</th>
                 <th>Str</th>
                 <th>Con</th>
@@ -44,7 +54,7 @@
                 <th></th>
               </thead>
               <tbody>
-                <tr ng-repeat="player in players ">
+                <tr ng-repeat="player in players | orderBy:'position'">
                     <td>{{player.first}}</td>
                     <td>{{player.last}}</td>
                     <td>{{player.height}}</td>
@@ -78,12 +88,13 @@
             <div class ="playersRemaining">
 
                 <p class="QBslots">QB: {{QBCount}}/1</P>
-                <p class="RBslots"> RB: {{RBCount}}/2</p>
-                <p class="WRslots"> WR: {{WRCount}}/2 </P>
-                <p class='DEslots'> DE: {{DECount}}/2</p>
+                <p class="RBslots"> RB: {{RBCount}}/1</p>
+                <p class="WRslots"> WR: {{WRCount}}/1 </P>
+                <p class='DEslots'> DE: {{DECount}}/1</p>
                 <p class='MLBSlots'> MLB: {{MLBCount}}/1</p>
 
                  <button type="button" class="btn btn-default" ng-click='save()'>Save</button>
+
 
                  <a class="btn btn-success startGame" href="#!teamhome">Start</a>
 
@@ -122,7 +133,7 @@
                             <td>{{player.Int}}</td>
                             <td>{{player.Wis}}</td>
                             <td>{{player.Cha}}</td>
-                            <td><button type="button" class="btn btn-default" >Remove</button></td>
+                            <td><button type="button" class="btn btn-default" ng-click="remove(player)">Remove</button></td>
 
 
                         </tr>

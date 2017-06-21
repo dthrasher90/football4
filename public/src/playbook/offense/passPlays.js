@@ -178,8 +178,7 @@ function passPlayLeft() {
           console.log("old spot ", oldBallSpot);
           console.log('wr1 = ',  wr1);
 
-          var x = 1;
-          // Math.floor((Math.random() * 3) + 1);
+          var x =  Math.floor((Math.random() * 3) + 1);
           console.log(x);
           switch (x) {
 
@@ -213,16 +212,18 @@ function passPlayLeft() {
 
                     console.log(newBallSpotx, oldBallSpotx, yards);
 
+                    passingScripts();
+
                     if(football.x >720){
                       console.log("crossed mid field");
                       homeTD();
                     }
-                    //  setTimeout(switchStateToHuddle,1500);
+                     setTimeout(switchStateToHuddle,1500);
                     return newBallSpotx, newBallSpoty, playCount
 
 
                   });
-
+                   passingScripts();
                   console.log('1');
 
                   break;
@@ -282,7 +283,6 @@ function passPlayLeft() {
                    setTimeout(switchStateToHuddle,1500);
 
                     var x1 = +newBallSpotx;
-
                     var x2 = +oldBallSpotx;
                     var yards = +yards;
 
@@ -291,6 +291,7 @@ function passPlayLeft() {
                     wr3RecYards = wr3RecYards + yards;
 
                     wr3Yards = wr3RecYards.toFixed(0);
+                    passingScripts();
 
                     if(football.x >720){
                       console.log("crossed mid field");
@@ -305,6 +306,7 @@ function passPlayLeft() {
 
 
                     });
+
                   console.log('3');
 
                   break;
@@ -474,7 +476,7 @@ function passPlayRight() {
 
                   oldBallSpotx = football.x;
                   console.log("old spot ", oldBallSpot);
-                  var x =  Math.floor((Math.random() * 3) + 1);
+                  var x = Math.floor((Math.random() * 3) + 1);
                   console.log(x);
 
                   switch (x) {
@@ -484,7 +486,7 @@ function passPlayRight() {
                       var tweenFootballA = game.add.tween(football).to({
                           x: '+200',
                           y: '+100'
-                      }, 700, "Linear", true, 3000);
+                      }, 700, "Linear", true, 500);
                           tweenFootballA.start();
                           tweenFootballA.onComplete.add(function newlocation (){
 
@@ -508,7 +510,7 @@ function passPlayRight() {
                             console.log(newBallSpotx, oldBallSpotx, yards);
 
 
-                            setTimeout(switchStateToHuddle,3000);
+                            setTimeout(switchStateToHuddle,1500);
                             return newBallSpotx, newBallSpoty, playCount;
                             });
                           break;
@@ -519,7 +521,7 @@ function passPlayRight() {
                       var tweenFootballB = game.add.tween(football).to({
                           x: '+30',
                           y: '+150'
-                      },700, "Linear", true, 3500);
+                      },700, "Linear", true, 700);
                           tweenFootballB.start();
                           tweenFootballB.onComplete.add(function newlocation (){
                                 newBallSpotx = football.x;
@@ -539,7 +541,7 @@ function passPlayRight() {
 
                                 console.log("wr2 stats =  ", wr2Yards);
 
-                                 setTimeout(switchStateToHuddle,3000);
+                                 setTimeout(switchStateToHuddle, 1500);
                                 return newBallSpotx, newBallSpoty, playCount;
                             });
                           console.log('2');
@@ -552,7 +554,7 @@ function passPlayRight() {
                       var tweenFootballC = game.add.tween(football).to({
                           x: '+90',
                           y: '-20'
-                      }, 700, "Linear", true, 3500);
+                      }, 700, "Linear", true, 750);
                           tweenFootballC.start();
                           tweenFootballC.onComplete.add(function newlocation (){
                                 newBallSpotx = football.x;
@@ -571,7 +573,7 @@ function passPlayRight() {
                                 wr3Yards = wr3RecYards.toFixed(0);
 
                                 console.log("wr3 stats =  ", wr3Yards);
-                                 setTimeout(switchStateToHuddle,3000);
+                                 setTimeout(switchStateToHuddle, 1500);
                                 return newBallSpotx, newBallSpoty, playCount
                             });
                           console.log('3');
@@ -680,21 +682,29 @@ function passPlayRight() {
                var tweenA = game.add.tween(wr1).to({
                    x: '+100'
                }, 2000);
+
                var tweenA2 = game.add.tween(wr1).to({
                    y: '-100'
                }, 2000);
                tweenA.chain(tweenA2);
 
                var tweenB = game.add.tween(wr2).to({
-                   x: '+300'
-               }, 3000);
+                   x: '+85'
+               }, 1000);
+
+               var tweenB2 = game.add.tween(wr2).to({
+                  y:' +200'
+               }, 2000);
+               tweenB.chain(tweenB2);
 
                var tweenC = game.add.tween(wr3).to({
                    x: '+200'
                }, 2000);
+
                var tweenC2 = game.add.tween(wr3).to({
                    y: '-200'
                }, 2000);
+
                tweenC.chain(tweenC2);
 
                 tweenA.start();
@@ -703,13 +713,10 @@ function passPlayRight() {
                 qbPass();
                 function qbPass(playCount) {
 
-                  wr1.body.collideWorldBounds = true;
-                  wr2.body.collideWorldBounds = true;
-                  wr3.body.collideWorldBounds = true;
-
 
                   //pass play middle
-                 var x =   Math.floor((Math.random() * 3) + 1);
+                 var x = 2;
+                //  Math.floor((Math.random() * 3) + 1);
                  console.log(x);
 
                  oldBallSpotx = football.x;
@@ -742,18 +749,20 @@ function passPlayRight() {
                            console.log(newBallSpotx, oldBallSpotx, yards);
 
 
-                           setTimeout(switchStateToHuddle,3000);
+                           setTimeout(switchStateToHuddle, 1500);
                            return newBallSpotx, newBallSpoty, playCount;
                          });
                          console.log('1');
                          break;
 
                      case 2:
+
                      console.log("case 2 right here");
+
                      var tweenFootballB = game.add.tween(football).to({
-                         x: '+75',
-                         y: '-125'
-                     }, 2000, "Linear", true, 1000);
+                         x: '',
+                         y: '-8'
+                     }, 2000);
 
                          tweenFootballB.start();
                          tweenFootballB.onComplete.add(function newlocation (){
@@ -774,7 +783,7 @@ function passPlayRight() {
 
                            console.log("wr2 stats =  ", wr2Yards);
 
-                         setTimeout(switchStateToHuddle,3000);
+                         setTimeout(switchStateToHuddle,1500);
                            return newBallSpotx, newBallSpoty, playCount;
                              });
                          console.log('2');
@@ -804,7 +813,7 @@ function passPlayRight() {
 
                            console.log("wr3 stats =  ", wr3Yards);
 
-                           setTimeout(switchStateToHuddle,3000);
+                          //  setTimeout(switchStateToHuddle, 1500);
                            return newBallSpotx, newBallSpoty, playCount;
                              });
                          console.log('3');

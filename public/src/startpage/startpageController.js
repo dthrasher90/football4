@@ -81,20 +81,23 @@ app.controller('startCtrl', ['$scope', '$localStorage', function($scope, $localS
 
 
     $scope.qb =[];
-    $scope.rb1=[];
-    $scope.rb2=[];
-    $scope.wr1=[];
-    $scope.wr2=[];
-    $scope.wr3=[];
+    $scope.rb=[];
+
+    $scope.wr=[];
+
 
     $scope.gameRoster =[];
     $scope.myTeam1= [];
     $scope.myTeam=[];
     $scope.players=[];
     $scope.newteam=[];
-    $scope.start = function(){}
+    $scope.start = function(){};
 
+    $scope.wr1Yards = wr1Yards;
+    $scope.wr2Yards = wr2Yards;
+    $scope.wr3Yards = wr3Yards;
 
+    $scope.rb1Yards = rushingYards;
 
 
 
@@ -106,7 +109,7 @@ function characterGen(){
           return {
               first: chance.first({gender: "male"}),
               last: chance.last(),
-              position:  chance.pickone(['QB', 'RB1', 'RB2', 'WR1' ,'WR2', 'MLB', 'DE']),
+              position:  chance.pickone(['QB', 'RB', 'WR', 'MLB', 'DE']),
               college: chance.pickone(['Alabama','Arkansas', 'Florida', 'Kentucky', 'LSU', 'Mississippi St', 'Ole Miss', 'Texas A&M', 'Mississippi', 'S. Carolina',
                'Tennessee', 'Georgia', 'Missouri', 'Vanderbilt', 'Boston College', 'Clemson', 'Florida St', 'Louisville', 'Notre Dame', 'Syracuse', 'Wake Forest',
                'Duke', 'Miami', 'Pittsburg', 'Virginia', 'Maryland',
@@ -162,40 +165,105 @@ $scope.WRCount=0;
 $scope.MLBCount=0;
 $scope.DECount=0;
 
+// $scope.orderByPosition = function(x) {
+//        $scope.myOrderBy = x;
+//    }
+//
 
-$scope.button1 = function(myTeam){
+
+$scope.button1 = function(myTeam, index, player){
 
 
     if(this.player.position == 'QB'){
         $scope.QBCount = $scope.QBCount +1;
+        $scope.qb.push({
+          first: this.player.first,
+          last: this.player.last,
+          height:this.player.height,
+          weight: this.player.weight,
+          position: this.player.position,
+          college:  this.player.college,
+          Str : this.player.Str,
+          Con: this.player.Con,
+          Dex: this.player.Dex,
+          Int: this.player.Int,
+          Wis: this.player.Wis,
+          Cha: this.player.Cha,
+          id: this.player.id
+        });
+        console.log("scopeqb", $scope.qb);
+
+        var  qb =  JSON.stringify($scope.qb);
+        $localStorage.myqb = qb;
+
 
           if ($scope.QBCount > 1){
-            // alert("drop a qn");
+            alert("Drop a QB");
           }
 
 
     } else if(this.player.position == 'WR'){
 
        $scope.WRCount = $scope.WRCount + 1;
+       $scope.wr.push({
+         first: this.player.first,
+         last: this.player.last,
+         height:this.player.height,
+         weight: this.player.weight,
+         position: this.player.position,
+         college:  this.player.college,
+         Str : this.player.Str,
+         Con: this.player.Con,
+         Dex: this.player.Dex,
+         Int: this.player.Int,
+         Wis: this.player.Wis,
+         Cha: this.player.Cha,
+         id: this.player.id
+       });
 
-         if ($scope.WRCount > 2){
-          //  alert("drop a WR");
+       console.log("scope.wr ----=== ", $scope.wr);
+       var  wr =  JSON.stringify($scope.wr);
+       $localStorage.mywr = wr;
+
+
+         if ($scope.WRCount > 1){
+           alert("Drop a WR");
          }
 
     } else if(this.player.position == 'RB'){
 
        $scope.RBCount = $scope.RBCount + 1;
 
-         if ($scope.RBCount > 2){
-          //  alert("drop a RB");
+       $scope.rb.push({
+         first: this.player.first,
+         last: this.player.last,
+         height:this.player.height,
+         weight: this.player.weight,
+         position: this.player.position,
+         college:  this.player.college,
+         Str : this.player.Str,
+         Con: this.player.Con,
+         Dex: this.player.Dex,
+         Int: this.player.Int,
+         Wis: this.player.Wis,
+         Cha: this.player.Cha,
+         id: this.player.id
+       });
+
+       console.log("scope.rb=", $scope.rb);
+       var  rb =  JSON.stringify($scope.rb);
+       $localStorage.myrb = rb;
+
+         if ($scope.RBCount > 1){
+           alert("Drop a RB");
          }
 
     } else if(this.player.position == 'DE'){
 
        $scope.DECount =$scope.DECount + 1;
 
-         if ($scope.DECount > 2){
-          //  alert("drop a DE");
+         if ($scope.DECount > 1){
+           alert("Drop a DE");
          }
 
     } else if(this.player.position == 'MLB'){
@@ -203,10 +271,9 @@ $scope.button1 = function(myTeam){
       $scope.MLBCount = $scope.MLBCount + 1;
 
         if ($scope.MLBCount > 1){
-          // alert("drop a MLB");
+          alert("Drop a MLB");
         }
     }
-
 
 
 
@@ -227,80 +294,136 @@ $scope.button1 = function(myTeam){
         id: this.player.id
     });
 
+    var selectedPlayer = $scope.players.indexOf(this.player);
+    console.log(selectedPlayer);
+    $scope.players.splice(selectedPlayer, 1);
 
     console.log($scope.newteam);
 
+
   };
 
-$scope.save = function(team1) {
+$scope.remove = function(player){
 
 
-        myteam = $scope.newteam;
-        team1= JSON.stringify(myteam);
-        console.log("myteam", myteam, team1);
-        alert("Team saved");
-        $localStorage.myteam = team1;
+    var removeSelectedPlayer = $scope.newteam.indexOf();
+    $scope.newteam.splice(removeSelectedPlayer, 1);
+    console.log(player);
+    $scope.players.push(player);
+
+      if(this.player.position == 'QB'){
+          $scope.QBCount = $scope.QBCount -1;
+
+            }
+
+
+       else if(this.player.position == 'WR'){
+
+         $scope.WRCount = $scope.WRCount -1;
+
+           }
+
+           else if(this.player.position == 'RB'){
+
+         $scope.RBCount = $scope.RBCount - 1;
+
+           }
+
+           else if(this.player.position == 'DE'){
+
+         $scope.DECount =$scope.DECount -1;
+
+           }
+
+           else if(this.player.position == 'MLB'){
+
+        $scope.MLBCount = $scope.MLBCount- 1;
+
+          }
+
+
+
+
+}
+
+// $scope.save = function(team1) {
+//
+//     //
+//     if (this.player.position == 'QB') {
+//
+//         console.log(this.player);
+//         $scope.qb = this.playe;r;
+//         var qb = $scope.qb;
+//
+//       }
+//      else if (this.player.position == 'WR') {
+//
+//         $scope.WRCount = $scope.WRCount + 1;
+//
+//         if ($scope.WRCount > 1) {
+//             alert("Drop a WR");
+//         }
+//
+//     } else if (this.player.position == 'RB') {
+//
+//         $scope.RBCount = $scope.RBCount + 1;
+//
+//         if ($scope.RBCount > 1) {
+//             alert("Drop a RB");
+//         }
+//
+//     } else if (this.player.position == 'DE') {
+//
+//         $scope.DECount = $scope.DECount + 1;
+//
+//
+//         if ($scope.DECount > 2) {
+//             alert("Drop a DE");
+//         }
+//
+//     } else if (this.player.position == 'MLB') {
+//
+//         $scope.MLBCount = $scope.MLBCount + 1;
+//
+//         if ($scope.MLBCount > 1) {
+//             alert("Drop a MLB");
+//         }
+//     }
+// }
+$scope.save = function(qb){
+    myteam = $scope.newteam;
+    team1 = JSON.stringify(myteam);
+    console.log("myteam", myteam, team1);
+    alert("Team saved");
+    $localStorage.myteam = team1;
+
+
 
 }
 
 
 
 
-$scope.load = function(){
+$scope.load = function() {
 
 
-  $scope.yo = JSON.parse($localStorage.myteam || null);
-      console.log($scope.yo);
-  angular.extend($scope.gameRoster, $scope.yo);
-  console.log("game roseter --- ", $scope.gameRoster);
+    $scope.yo = JSON.parse($localStorage.myteam || null);
+    console.log($scope.yo);
+    angular.extend($scope.gameRoster, $scope.yo);
+    console.log("game roseter --- ", $scope.gameRoster);
+
 
 
 }
 
 $scope.yo = JSON.parse($localStorage.myteam || null);
-    console.log($scope.yo);
+$scope.qb1 = JSON.parse($localStorage.myqb || null);
+$scope.rb1 = JSON.parse($localStorage.myrb || null);
+$scope.wr1= JSON.parse($localStorage.mywr || null);
 
-
-
-
-
-// $scope.myFunc = function(setPosition) {
-//
-//     console.log("item --- ", setPosition.item.position)
-//
-//     if(setPosition.item.position == "QB"){
-//
-//       $scope.qb = $scope.qb.concat(setPosition);
-//       $scope.gameRoster.push($scope.qb);
-//       console.log("set qb", $scope.qb);
-//
-//     } else if(setPosition.item.position == "RB"){
-//
-//       $scope.rb1 = $scope.rb1.concat(setPosition);
-//       console.log("set rb",  $scope.rb1);
-//
-//     } else if(setPosition.item.position == "WR"){
-//
-//       $scope.wr1 = $scope.wr1.concat(setPosition);
-//       console.log("set wr1",  $scope.wr1);
-//
-//     }
-// };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$scope.change = function(){
+  console.log("ng change");
+}
 
 
 

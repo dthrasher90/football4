@@ -1,4 +1,10 @@
 
+
+
+
+var rushingYards = 0;
+
+
 function runPlayMiddle(){
 
 
@@ -23,7 +29,7 @@ function runPlayMiddle(){
 
       runningPlaysDownChecker();
 
-      Base43Defense(ct);
+      // Base43Defense(ct);
 
 
        var QBx = ct.x - 20;
@@ -68,8 +74,8 @@ function runPlayMiddle(){
            font: '9px Press Start 2P'
        });
        this.game.physics.arcade.enable(lg2, Phaser.Physics.ARCADE);
-       lg2.body.velocity.x = +20;
-       lg2.body.checkCollision.right = true;
+      //  lg2.body.velocity.x = +20;
+      //  lg2.body.checkCollision.right = true;
 
        console.log('lg2 =========== ', lg2);
        //
@@ -94,19 +100,7 @@ function runPlayMiddle(){
            font: '9px Press Start 2P'
        });
        lt.game.physics.arcade.enable(lt, Phaser.Physics.ARCADE);
-       lt.body.velocity.x= +200;
-
-
-
-      //  var DT1x = ct.x + 40;
-      //  var DT1y = ct.y  -20;
-      //  var x53= this.game.add.sprite(DT1x, DT1y, 'dt1');
-      //          x53.scale.setTo(0.061);
-      //  var spriteTextDT1 = game.add.text(DT1x, DT1y, 'DT1', {font: '9px Press Start 2P'});
-      //  x53.game.physics.arcade.enable(x53, Phaser.Physics.ARCADE);
-      //  console.log('x53', x53);
-      //  x53.body.velocity.x = -50;
-
+      //  lt.body.velocity.x= +200;
 
 
 
@@ -190,7 +184,7 @@ function runPlayMiddle(){
 
              rbChoice();
 
-                  setTimeout(switchStateToHuddle,3000);
+                  setTimeout(switchStateToHuddle, 1500);
 
                  });
 
@@ -205,7 +199,8 @@ function runPlayMiddle(){
              console.log('wr1 ===', wr1);
              function rbChoice(){
 
-                     var y =  Math.floor((Math.random() * 3) + 1);
+                     var y = 1
+                     // Math.floor((Math.random() * 3) + 1);
                      console.log("rb choice  === ", rushingYards);
                      console.log('rb1= ',rb1);
                     switch (y){
@@ -266,7 +261,7 @@ function runPlayMiddle(){
                           homeTD();
                         }
 
-                        setTimeout(switchStateToHuddle,3000);
+                        setTimeout(switchStateToHuddle, 1500);
 
                         console.log("statement 2");
                         break;
@@ -275,7 +270,7 @@ function runPlayMiddle(){
                         rushingYards = (rushingYards * 5);
                         rushingYards = rushingYards + football.x;
 
-                        var tweenB3 = game.add.tween(rb1).to({
+                        var tweenB3 rushingYard= game.add.tween(rb1).to({
                           x: + rushingYards
 
 
@@ -294,7 +289,7 @@ function runPlayMiddle(){
                           homeTD();
                         }
 
-                        setTimeout(switchStateToHuddle,3000);
+                        setTimeout(switchStateToHuddle, 1500);
 
                         break;
 
@@ -470,6 +465,7 @@ function runPlayLeft (){
            var y =   Math.floor((Math.random() * 3) + 1);
            console.log(y);
            console.log('rb1= ',rb1);
+
           switch (y){
 
           case 1:
@@ -498,7 +494,7 @@ function runPlayLeft (){
 
                 homeTD();
               }
-              setTimeout(switchStateToHuddle,2000);
+              setTimeout(switchStateToHuddle, 1500);
 
               return newBallSpotx
 
@@ -532,7 +528,7 @@ function runPlayLeft (){
               homeTD();
             }
 
-            setTimeout(switchStateToHuddle,2000);
+            setTimeout(switchStateToHuddle, 1500);
 
             return newBallSpotx
 
@@ -572,7 +568,7 @@ function runPlayLeft (){
               homeTD();
             }
 
-              setTimeout(switchStateToHuddle,3000);
+              setTimeout(switchStateToHuddle, 1500);
             return newBallSpotx
 
         });
@@ -788,7 +784,7 @@ function runPlayRight(){
                      homeTD();
                    }
 
-                   setTimeout(switchStateToHuddle,3000);
+                   setTimeout(switchStateToHuddle, 1500);
 
                    return newBallSpotx
 
@@ -821,7 +817,7 @@ function runPlayRight(){
                      homeTD();
                    }
 
-                   setTimeout(switchStateToHuddle,3000);
+                   setTimeout(switchStateToHuddle, 1500);
 
                    return newBallSpotx
 
@@ -858,7 +854,7 @@ function runPlayRight(){
                      homeTD();
                    }
                    // newBallSpoty = rb1.y\
-                   setTimeout(switchStateToHuddle,3000);
+                   setTimeout(switchStateToHuddle, 1500);
 
                    return newBallSpotx
 
