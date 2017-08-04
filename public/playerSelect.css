@@ -1,7 +1,11 @@
+*{box-sizing: border-box;}
+
 body{
   font-family: "Press Start 2P", cursive;
   background: black;
   color: ghostwhite;
+  min-height: 100vh;
+  
 }
 h1{
   text-align: center;
@@ -17,8 +21,9 @@ table{
 }
 
 thead{
-/
-  width: 100%;
+
+  z-index: 1;
+  width: 100%
   padding: 3px;
 }
 th{
@@ -37,84 +42,64 @@ td{
 
 }
 
-#playerContainer{
-  height:400px;
-  width: 100%;
-  overflow: scroll;
-}
 
-#myTeam{
-  height:600px;
-  width: 50%;
-  overflow: scroll;
-}
+.playerContainer{
+
+    height: 300px;
+    width: 800px;
+    overflow: scroll;
 
 
-h3{
-  text-align: center;
 }
 
 
-.sectionContainment{
-  height: 400px;
-  width: 100%;
-  clear:both;
-
-}
-.playersRemaining{
-  height:75px;
-  width: 100%;
-  padding: 3px;
-  text-align: center;
+.playerCard{
+  background: linear-gradient( black 0%, darkslateblue  60%, #cedce7 100%);
 
   position: relative;
-
-
-}
-
-.startGame{
-  float: right;
-  margin-bottom: 20px;
-
-
-}
-
-.playersRemaining p{
-  display: inline;
-  padding-top: 3px;
-  text-align: center;
-
-}
-
-.playersRemaining p{
-  text-align: center;
-  padding-top: 1px;
-
-}
-
-.myTeam{
   height: 200px;
-  width: 100%;
-}
+  width: 200px;
+  background-color: #464b4d;
+  transition: all 1s ease-in-out;
+  margin-left: 20px;
+  margin-top: 20px;
+  transform-style: preserve-3d;
+  perspective: 600;
+ 
 
 
 }
-.table{
-  font-family: "Press Start 2p", cursive;
-  font-size: 10px;
-  border-color: black;
-  table-layout: auto;
-  width: 50%;
-  overflow-x: scroll;
+
+
+.playerCard:hover{
+  transform : rotateY(180deg);
+}
+.front, .back{
+  position: absolute;
+  top:0;
+  left:0;
+  backface-visibility: hidden;
+  }
+, .front{
+ 
+}
+.frontbtn{
+  
+
+}
+ .back{
+  transform: rotateY(180deg);
+   
 }
 
-thead{
-  background-color: dimgrey;
+.current{
+  float:  right;  
 }
-tbody{
-  overflow: scroll;
-}
-tr:hover{
-  background-color: grey;
-  color: lawngreen;
+
+.face{
+  float: right;
+
+  height: 60px;
+  width: 60px;'
+  backface-visibility: hidden;
 }
