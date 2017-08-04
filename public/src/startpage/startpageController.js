@@ -102,14 +102,14 @@ app.controller('startCtrl', ['$scope', '$localStorage', function($scope, $localS
 
 
 function characterGen(){
-  for(i = 0; i < 75; i++){
+  for(i = 0; i < 12; i++){
 
   chance.mixin({
       'user': function() {
           return {
               first: chance.first({gender: "male"}),
               last: chance.last(),
-              position:  chance.pickone(['QB', 'RB', 'WR', 'MLB', 'DE']),
+              position:  chance.pickone(['QB']),
               college: chance.pickone(['Alabama','Arkansas', 'Florida', 'Kentucky', 'LSU', 'Mississippi St', 'Ole Miss', 'Texas A&M', 'Mississippi', 'S. Carolina',
                'Tennessee', 'Georgia', 'Missouri', 'Vanderbilt', 'Boston College', 'Clemson', 'Florida St', 'Louisville', 'Notre Dame', 'Syracuse', 'Wake Forest',
                'Duke', 'Miami', 'Pittsburg', 'Virginia', 'Maryland',
