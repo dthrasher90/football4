@@ -1,4 +1,10 @@
 
+
+
+
+var rushingYards = 0;
+
+
 function runPlayMiddle(){
 
 
@@ -193,7 +199,8 @@ function runPlayMiddle(){
              console.log('wr1 ===', wr1);
              function rbChoice(){
 
-                     var y =  Math.floor((Math.random() * 3) + 1);
+                     var y = 1
+                     // Math.floor((Math.random() * 3) + 1);
                      console.log("rb choice  === ", rushingYards);
                      console.log('rb1= ',rb1);
                     switch (y){
@@ -263,7 +270,7 @@ function runPlayMiddle(){
                         rushingYards = (rushingYards * 5);
                         rushingYards = rushingYards + football.x;
 
-                        var tweenB3 = game.add.tween(rb1).to({
+                        var tweenB3 rushingYard= game.add.tween(rb1).to({
                           x: + rushingYards
 
 

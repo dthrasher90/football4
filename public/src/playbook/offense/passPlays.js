@@ -283,7 +283,6 @@ function passPlayLeft() {
                    setTimeout(switchStateToHuddle,1500);
 
                     var x1 = +newBallSpotx;
-
                     var x2 = +oldBallSpotx;
                     var yards = +yards;
 
@@ -293,6 +292,7 @@ function passPlayLeft() {
 
                     wr3Yards = wr3RecYards.toFixed(0);
                     passingScripts();
+
                     if(football.x >720){
                       console.log("crossed mid field");
                       homeTD();
