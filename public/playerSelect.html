@@ -35,32 +35,39 @@
             <div class="row">
                 <div class="playerCard d-inline-flex p-2 " id="randImage" ng-repeat="player in players" onload="g">
                     <div class= "cardContain">
-                        <div class="inner">
-                        <div class="front clearfix ">
-                            <section class="cardHeader">
-                                <h5 class="position"> {{player.position}}</h5> <img class="face" src="male1.png" />
-                            </section>
-                            <section class="playerInfo">
-                                <h6>{{player.last}}, {{player.first}}</h6>
-                                <p>college: {{player.college}} </p>
-                            </section>
-                            <button class="btn btn-primary btn-sm dropBtn" ng-click="button1()">Add</button>
-                        </div>
-                        <div class="back">
-                            <div class="playerStats">
-                                str: {{player.Str}} </br>
-                                con: {{player.Con}} </br>
-                                dex: {{player.Dex}} </br>
-                                int: {{player.Int}} </br>
-                                wis: {{player.Wis}} </br>
-                                cha: {{player.Cha}} </br>
+                        <div class="inner clearfix">
+                            <div class="front clearfix ">
+                                <section class="cardHeader">
+                                    <h5 class="position"> {{player.position}}</h5> <img class="face" src="male1.png" />
+                                </section>
+                                <section class="playerInfo">
+                                    <h6>{{player.last}}, {{player.first}}</h6>
+                                    <p>college: {{player.college}} </p>
+                            
+                         <!--        <button class="btn btn-primary btn-sm dropBtn" ng-click="button1()">Add</button> -->
+                                    </section>
+                          
                             </div>
-                            </div>
-                            </br>
-                            <button class="btn btn-primary btn-sm dropBtn" ng-click="button1()">Add</button>
                         </div>
+                            <div class="back">
+                            <div class ="innerBack">
+                                <div class="playerStats">
+                                    str: {{player.Str}} </br>
+                                    con: {{player.Con}} </br>
+                                    dex: {{player.Dex}} </br>
+                                    int: {{player.Int}} </br>
+                                    wis: {{player.Wis}} </br>
+                                    cha: {{player.Cha}} </br>
+                                </div>
+                              <!--   <button class="btn btn-primary btn-sm dropBtn" ng-click="button1()">Add</button> -->
+                                </div>
+                                </br>
+                            </div>
+                         <button class="bottom" ng-click="button1()">  SELECT   </button>
                     </div>
+
                 </div>
+
             </div>
         </div>
     </div>
