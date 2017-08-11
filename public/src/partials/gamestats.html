@@ -1,0 +1,64 @@
+<div class="gameStats" ng-app="app" ng-controller="startCtrl">
+
+
+    <table class="gamestatsTable">
+
+        <th><h3>Team Stats</h3></tr>
+        <tr><td> Total Yards:  </td> <td> 200</td></tr>
+        <tr><td> Turnovers/Lost:  </td> <td> 1/1</td></tr>
+        <tr><td> Penalties/Yards: </td> <td> 5/30</td></tr>
+        <tr><td> Play Count: </td> <td> {{playCount}}</td></tr>
+
+        <th><h3> Passing</h3></th>
+        <tr ng-repeat= "player in qb1">
+        <td> QB1 -- {{player.last}}, {{player.first}} </td></br>
+        <tr>><td> Passing Yards:   </td> </tr>
+        <tr><td> Pass Comp/Att:   </td></tr>
+        <tr><td> Completetion %:  </td></tr>
+        </tr>
+
+        <th><h3>Rushing</h3></th>
+        <tr ng-repeat= "player in rb1">
+
+        <td>RB1 -- {{player.last}},{{player.first}} </br></td>
+        <tr><td> Rushing Yards: {{rb1Yards}}</td> </tr>
+        <tr><td> Yards/Carry:   </td> </tr>
+        <tr><td> Completetion %:  </td></tr>
+        </tr>
+
+
+        <th><h3> Reciving</h3></th>
+        <tr ng-repeat= "player in wr1">
+
+        <td>WR1 -- {{player.last}},{{player.first}}</td>
+        <td> {{wr1Yards}}</td>
+        <tr><td> WR2:  {{wr2Yards}}</td></tr>
+        <tr><td> WR3:  {{wr3Yards}}</td></tr>
+
+
+      </tr>
+
+
+
+    </table>
+
+</div>
+
+<style>
+.gameStats{
+  color: ghostwhite;
+}
+.player{
+
+}
+
+h3{
+  text-decoration: underline;
+}
+
+tr{
+  padding: 3px;
+
+}
+
+</style>

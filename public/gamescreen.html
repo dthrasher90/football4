@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <title>MEAN FOOTBALL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="src/startpage/chance.js"></script>
+    <script src="src/startpage/startpageController.js"></script>
+    <script src="phaser2.js"></script>
+    <script src="src/state/bootState.js"></script>
+    <script src="src/state/GameActionState.js"></script>
+    <script src="src/state/OffenseInitState.js"></script>
+    <script src="src/state/HuddleState.js"></script>
+    <script src="src/assets/scripts/gamefunctions.js"></script>
+    <script src="src/assets/scripts/applicationLogic.js"></script>
+    <script src="src/assets/scripts/rushingLogScripts.js"></script>
+    <script src="src/assets/scripts/passLog.js"></script>
+    <script src="src/playbook/offense/passPlays.js"></script>
+    <script src="src/playbook/offense/runPlays.js"></script>
+    <script src="src/playbook/defense/defensiveplays.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body ng-controller="startCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="wrapper">
+                <div class="field col-md-7">
+                    <p class="homeScore">Home:</p>
+                    <p id="home"> </p>
+                    <p class="gametime"> Time:</p>
+                    <p class="gamequarter"> QTR: 1</p>
+                    <p id="counter">15:00</p>
+                    <p class="awayScore"> Away: </p>
+                    <p id="away"> </p>
+                    <p id="currentDownDisplay"> </p>
+                    <p id="yardsRemaining"> </p>
+                    <!-- <p id= "yardsRemaining">11 </p> -->
+                    <div id="gamecanvas"> </div>
+                    <div class="gameLogWrapper">
+                            
+                           <div id="gameLog"></div>
+                     </div>
+                    <div class="controls">
+                        <div class="btn-group passPlayBtn">
+                            <button type="button" onclick="passPlayLeft()" class="btn btn-info">Pass Left</button>
+                            <button type="button" onclick="passPlayMiddle()" class="btn btn-info">Pass Middle</button>
+                            <button type="button" onclick="passPlayRight()" class="btn btn-info">Pass Right</button>
+                        </div>
+                        <div class="btn-group runPlayBtn">
+                            <button type="button" onclick="runPlayLeft()" class="btn btn-info">Run Left</button>
+                            <button type="button" onclick="runPlayMiddle()" class="btn btn-info">Run Middle</button>
+                            <button type="button" onclick="runPlayRight()" class="btn btn-info">Run Right</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    var oldBallSpot
+    var game = new Phaser.Game(770, 423, Phaser.AUTO, 'gamecanvas');
+    game.state.add('GameActionState', GameActionState);
+
+    game.state.add('bootState', bootState);
+    game.state.start('bootState');
+</script>

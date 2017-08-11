@@ -1,0 +1,30 @@
+<div class="depthchart" ng-app= "app" ng-controller="startCtrl">
+<h3> Coach Player </h3>
+
+
+
+
+  <table class="coachTable">
+    <tr ng-repeat="player in yo">
+        <td>{{player.position}}</td>
+        <td>{{player.first}}</td>
+        <td>{{player.last}}</td>
+
+        <td> <button type="button" onclick= "coachPlayer()"  class="btn btn-default btn-sm"> Coach!!!
+          </button></td>
+
+    </tr>
+  </table>
+
+
+
+
+</div>
+
+<style>
+
+td{
+  padding: 5px;
+
+}
+</style>

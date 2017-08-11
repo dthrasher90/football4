@@ -1,0 +1,72 @@
+body {
+    background-color: black;
+    font-family: "Press Start 2P", cursive;
+    color: ghostwhite;
+}
+*{
+    box-sizing: border-box;
+   
+}
+
+.teamHome{
+    background-image: url(stadium4.jpg);
+    background-size: cover;
+    background-size: 100% 100S%;
+    height:700px;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    box-sizing: border-box;
+    display: inline-flex;
+
+
+}
+
+
+.teamHomeContainer {
+    height: 200px;
+    width: 200px;
+}
+
+.wrapper {
+ 
+    height: 600px;
+    min-height: 100vh;
+    min-width: 100%;
+    box-sizing: border-box;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+ 
+
+}
+
+.teamCard {
+    background: linear-gradient( darkslategrey 0%, silver 60%, white 100%);
+    font-size: 10px;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    background-color: #464b4d;
+    transition: all 1s ease-in-out;
+    margin-top: 15px;
+    margin-left: 15px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.front img {
+    position: relative;
+    height: 50px;
+    width: 50px;
+}
+
+table{
+    position: absolute;
+    top: 300px;
+}
+tr:hover{
+    color: lime;
+}
